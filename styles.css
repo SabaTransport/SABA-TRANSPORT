@@ -1,56 +1,145 @@
-.body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
+:root {
+  --primary-blue: #1e3a5f;
+  --secondary-blue: #2c5aa0;
+  --primary-orange: #ff7a00;
 }
 
-.header {
-    background-color: #0056b3; /* Blue */
-    color: white;
-    padding: 20px;
-    text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    background-color: #ffa500; /* Orange */
-    padding: 10px;
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
+/* Navigation Styles */
+nav {
+  background-color: var(--primary-blue);
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 
-.navbar a:hover {
-    text-decoration: underline;
+nav:hover {
+  background-color: var(--secondary-blue);
 }
 
-.button {
-    background-color: #0056b3; /* Blue button */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  transition: color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #004494;
+nav a:hover {
+  color: var(--primary-orange);
 }
 
+/* Hero Section Styles */
+.hero {
+  background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+}
+
+/* Services Grid Styles */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Delivery Options Styles */
+.delivery-options {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Certificates Section Styles */
+.certificates {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.certificate {
+  width: 200px;
+  margin: 10px;
+}
+
+/* About Section Styles */
+.about {
+  padding: 40px 20px;
+  background-color: #F4F4F4;
+  text-align: center;
+}
+
+/* Contact Form Styles */
+.contact {
+  padding: 40px 20px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact input, .contact textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact input[type='submit'] {
+  background-color: var(--primary-orange);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.contact input[type='submit']:hover {
+  background-color: var(--secondary-blue);
+}
+
+/* Footer Styles */
 .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  background-color: var(--primary-blue);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  .services {
+    grid-template-columns: 1fr;
+  }
 }
